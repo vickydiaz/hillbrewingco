@@ -1,0 +1,852 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Playfair+Display:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&family=Playfair+Display:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Playfair+Display:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500&display=swap');
+
+html {
+    scroll-behavior: smooth;
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: IBM Plex Sans;
+    color: black;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+.landing-page {
+    background-image: url('./img/barrels-background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.landing-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+nav {
+    position: relative;
+    z-index: 2;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+}
+
+nav a {
+    position: relative;
+    z-index: 2;
+    margin-right: 40px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #EEEADE;
+    font-weight: 200;
+    font-size: 18px;
+    letter-spacing: 2.5px;
+    padding-bottom: 10px;
+}
+
+nav a:hover {
+    color: white;
+    border-bottom: solid 2px #FFB300;
+}
+
+a.active {
+    text-decoration: none !important;
+    border-bottom: solid 2px #FFB300;
+    font-weight: 500;
+}
+
+.logo {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    position: relative;
+    z-index: 3; 
+    font-family: 'Playfair Display';
+    font-size: 140px;
+    color: #EEEADE;
+    font-weight: 900;
+    margin-left: 16%;
+    margin-top: 19%;
+    letter-spacing: 4px;
+    line-height: 140px;
+}
+
+.logo-line {
+    position: relative;
+    margin: 0;
+    border: solid 2px #FFB300;
+    margin-left: 18%;
+    margin-top: 40px;
+    width: 80px;
+    z-index: 3;
+}
+
+.est {
+    position: relative;
+    z-index: 7;
+    font-family: 'Playfair Display';
+    color: #EEEADE;
+    font-weight: 300;
+    font-size: 45px;
+    margin-left: 18%;
+    margin-top: 25px;
+}
+
+.categories {
+    background-color: rgba(0,0,0, 0.05);
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0, 0.07);
+    margin-bottom: 50px;
+}
+
+.categories .container {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.icon-wrap {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.icon-wrap:hover > a:not(.active-link) {
+    cursor: pointer;
+    color: rgba(0,0,0, 0.7);
+}
+
+.icon-wrap:hover {
+    cursor: pointer;
+}
+
+.categories img {
+    height: 65px;
+    margin-bottom: 10px;
+}
+
+.categories img:hover {
+    cursor: pointer;
+}
+
+.categories a img:hover{
+    color: rgba(0,0,0, 0.7);
+}
+
+.categories a {
+    display: block;
+    color: rgba(0,0,0, 0.3);
+}
+
+.categories a:hover {
+    color: rgba(0,0,0, 0.7);
+}
+
+.col-control {
+    border: lightgrey 1px solid;
+}
+
+.col { 
+  width: 33%;
+  text-align: center;
+}
+
+.inner-category {
+    width: 70%;
+    margin: 25px auto;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+
+.inner-category.active {
+    border-bottom: 3px solid #FFB300;
+}
+
+.inner-category.active a:hover {
+    color: rgba(0,0,0, 0.3);
+}
+
+.main-container {
+    width: 60%;
+    margin: 70px auto;
+}
+
+.main-container h1{
+    margin-bottom: 7px;
+    font-size: 35px;
+}
+
+.muted {
+    color: #7F7F7F;
+}
+
+.blog-img {
+    margin-top: 35px;
+    width: 600px;
+    height: 310px;
+    background-size: cover;
+}
+
+.paragraph-group {
+    margin-top: 45px;
+}
+
+.paragraph-group h3 {
+    margin-bottom: 10px;
+}
+
+.paragraph-group p {
+    line-height: 1.9;
+}
+
+.recipe-card {
+    border-radius: 6px;
+    height: 200px;
+    display: flex;
+    width: 90%;
+    margin: 80px auto;
+}
+
+.recipe-card:first-of-type {
+    margin-top: 120px;
+}
+
+.card-img {
+    background-size: cover;
+    width: 45%;
+    height: 100%;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+.card-body {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+.card-body h1 {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 15px;
+}
+
+.card-body button {
+    font-family: IBM Plex Sans;
+    font-weight: 100;
+    font-size: 14px;
+    background-color: #F8F9FA;
+    padding: 12px 10px;
+    width: 110px;
+    border: none;
+    margin-top: 35px;
+    border-radius: 3px;
+}
+
+.card-body button:focus {
+    outline: none;
+}
+
+.card-body button:active {
+    transform: scale(0.95);
+}
+
+.card-body button:hover {
+    cursor: pointer;
+    background-color: #E2E6EA;
+}
+
+
+.heffeweizen-recipes {
+    display: none;
+}
+
+
+
+@media (max-width: 375px) {
+    .landing-page {
+        height: 500px;
+        min-height: 0px;
+    }
+
+    .landing-page::after {
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    .blog-img {
+        width: 100%;
+        height: 180px;
+        margin-top: 29px;
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+
+    .logo h1 {
+        font-size: 70px;
+        margin-left: 12%;
+        margin-top: 50%;
+        line-height: 80px;
+    }
+
+    .logo-line {
+        border: solid 1px #FFB300;
+        margin-left: 14%;
+        margin-top: 20px;
+        width: 40px;
+    }
+    
+    .est {
+        font-size: 25px;
+        margin-left: 14%;
+        margin-top: 18px;
+    }
+
+    .categories .container {
+        width: 90%;
+    }
+
+    .icon-wrap {
+        width: 100%;  
+    }
+    
+    .categories img {
+        height: 45px;
+        margin-bottom: 10px;
+    }
+    
+    .inner-category {
+        width: 75%;
+        margin: 18px auto;
+        margin-bottom: 0;
+        padding-bottom: 20px;
+    }
+    
+    .categories a {
+        font-size: 12px; 
+    }
+
+    .main-container {
+        width: 85%;
+    }
+    
+    .main-container h1{
+        margin-bottom: 7px;
+        font-size: 23px;
+    }
+
+    .main-container p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .paragraph-group {
+        margin-top: 26px;
+    }
+    
+    .paragraph-group h3 {
+        margin-bottom: 6px;
+        font-size: 13px;
+    }
+    
+    .paragraph-group p {
+        line-height: 1.9;
+        font-size: 12px;
+    }
+
+    .recipe-card {
+        height: auto;
+        display: block;
+        width: 90%;
+    }
+    
+    .recipe-card:first-of-type {
+        margin-top: 90px;
+    }
+    
+    .card-img {
+        height: 150px;
+        width: 100%;
+    }
+    
+    .card-body {
+        width: 100%;
+        height: 40%;
+        margin-top: 30px;
+        text-align: center;
+        padding-left: 0px;
+    }
+    
+    .card-body h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .card-body p {
+        font-size: 14px;
+    }
+    
+    .card-body button {
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}    
+
+
+
+
+/* Dashboard */
+
+.dash .container {
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 70px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.logo-img {
+    height: 35px;
+    transform: translateY(-3px);
+}
+
+.dash nav {
+    height: auto;
+}
+
+.dash a {
+    padding: 0px;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.dash a:hover {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 14px;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    margin-left: auto;
+}
+
+.navbar li {
+    float: right;
+    vertical-align: middle;
+}
+
+.navbar-ul a {
+    font-size: 16px; 
+    padding: 0 21px;
+    color: rgba(255,255,255,.5);
+}
+
+.navBrand {
+    float: left;
+    padding: auto 0px;
+}
+
+
+.dash-logo-img {
+    height: 35px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.col-4 {
+    width: 23%; 
+    margin-right: 10px; 
+}
+
+.col-8 {
+    width: 77%;
+    margin-left: 17px;
+}
+
+.dash-card {
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.dash-card-header {
+    background-color: #FFB300;
+    color: white;
+    font-weight: 600;
+    border: 1px solid #FFB300;
+    padding: .75rem 1.25rem;
+    display: flex;
+    align-content: center;
+}
+
+.dash-card-icon {
+    height: 20px;
+    margin-right: 9px;
+}
+
+.dash-card li {
+    padding: .75rem 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    display: flex;
+    align-content: center;
+
+}
+
+.list li {
+    min-height: 57px;
+}
+
+
+.dash-card li:last-child {
+    border-bottom: none;
+}
+
+.dash-card a {
+    color: #343a40;
+    padding: 0;
+    font-size: 1rem;
+    margin: auto 0;
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-black:first-of-type {
+    margin-right: 0px;
+}
+
+.btn-black {
+    background-color: rgb(52, 58, 64);
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    padding: 9px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    letter-spacing: 1.2;
+    margin-right: 20px;
+}
+
+.btn-black:focus {
+    box-shadow:  0 0 0 .2rem rgba(52, 58, 63, 0.25);
+    background-color: rgb(52, 58, 64);
+    outline: none;
+}
+
+.btn-black:hover {
+    background-color: rgb(52, 58, 64);
+}
+
+.btn-black:disabled {
+    background-color: rgb(52, 58, 64);
+    filter: opacity(70%);
+    cursor: auto;
+}
+
+.btn-grey {
+    background-color:#f8f9fa;
+    float: right;
+    padding: .25rem 1rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    color: #343a40;
+    margin: 0 0 0 auto;
+    border: none;
+}
+
+.btn-grey:focus {
+    background-color: rgb(226, 230, 234);
+    box-shadow:  0 0 0 .2rem rgba(226, 230, 234, 0.50);
+    outline: none;
+    border: none;
+}   
+
+.btn-grey:hover {
+    background-color: #E2E6EA;
+    cursor: pointer;
+}
+
+#new-category {
+    width: 100%;
+    padding: .65rem 1rem;
+    margin-top: 15px;
+    border: 1px solid rgb(226, 230, 234);
+}
+
+
+.badge {
+    margin-left: auto;
+    color: #fff;
+    background-color: #343a40;
+    border-radius: 10rem;
+    vertical-align: baseline;
+    padding: .25em .9em;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.edit-buttons {
+    margin: 0 0 15px auto;
+}
+
+.edit-buttons button {
+    margin: 0;
+    background-color: #66bb6a ;
+    color: #fff;
+    font-size: 16px;
+    padding: 9px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    letter-spacing: 1.2;
+}
+
+.edit-buttons button:hover {
+    background-color: rgb(40, 167, 69);
+}
+
+.edit-buttons button:focus {
+    box-shadow:  0 0 0 .2rem rgba(40, 167, 69, 0.35);
+    background-color: rgb(40, 167, 69);
+    outline: none;
+}
+
+.edit-buttons a {
+    color: #343a4067;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.edit-buttons a:hover {
+    color: #343a40b6;
+}
+
+
+.dash input[type="text"], input[type="email"], input[type="password"], .select, textarea {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    height: 30px;
+    padding: 18px 14px;
+    border-radius: 4px;
+    font-family: var(--primary-font);
+    font-size: 15px;
+    color: #495058;
+    border: 1px solid gainsboro;
+    background-color: white;
+}
+
+.dash .select {
+    padding: 0 0 0 14px;
+}
+
+.dash input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, .select:focus, textarea:focus {
+    box-shadow: 0 0 0 .2rem rgba(226, 230, 234, 0.70);
+    outline: none;
+    border: 1px solid rgba(226, 230, 234, 0.70);
+}
+
+.dash textarea {
+    height: auto;
+}
+
+.dash label {
+    font-family: var(--primary-font);
+    font-size: 16px;
+    color: #212529;
+}
+
+.dash .checkbox, .radiobutton {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+
+.dash .select {
+    height: 40px;
+}
+
+.dash form {
+    padding: 30px 20px;
+}
+
+.center {
+    margin-left: 40%;
+}
+
+
+#paragraph-title, label {
+    font-weight: 600;
+}
+
+
+
+/* Auth Login & Register */
+
+.auth .card {
+    border: 1px gainsboro solid;
+    border-radius: 4px;
+    padding: 30px 40px;
+    background-color: white;
+}
+
+.auth h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#logintitle {
+    padding-bottom: 440px;
+}
+
+.btn-yellow {
+    background-color: #ffc107;
+    width: 100%;
+    color: #333;
+}
+
+.btn-yellow:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-yellow:focus {
+    background-color: rgb(255, 193, 7);
+    box-shadow:  0 0 0 .2rem rgba(255, 193, 7, 0.35);
+}
+
+.text-warning a {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #ffc107;
+}
+
+.text-warning {
+    font-size: 1.20rem;
+    font-weight: 300;
+}
+
+.preview-image {
+    display: block;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.custom-file {
+    margin-bottom: 30px;
+}
+
+
+/* Category icon cubes */
+
+.select-category-icon {
+    display: inline-block;
+}
+
+.category-icon-cube {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px gainsboro solid;
+    border-radius: 4px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    height: 60px;
+    width: 60px;
+}
+
+.category-icon-cube:hover {
+    border: 2px #7F7F7F solid;
+    cursor: pointer;
+}
+
+.category-icon-cube img {
+    height: 30px;
+}
+
+.selected-icon {
+    border: 2px #ffc107 solid;
+}
+
+.selected-icon:hover {
+    border: 2px #ffc107 solid;
+}
