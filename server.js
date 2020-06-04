@@ -23,7 +23,6 @@ dotenv.config({ path: './config/config.env'});
 
 // Connect Database
 connectDB();
-
 const app = express();
 
 // Body parser
@@ -55,16 +54,8 @@ app.use(hpp());
 // Enable CORS
 app.use(cors());
 
-
-// Set react as static page
-app.use(express.static(path.join(__dirname, 'client', 'public')));
-
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname,'client', 'public', 'index.html'));
-});
-
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Origin', 'https://www.hillbrewingco.net');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     if(req.method === 'OPTIONS') {
@@ -80,9 +71,11 @@ app.use('/api/recipes', recipes);
 app.use('/api/auth', auth);
 app.use('/api/categories', categories);
 
-// app.get('/', function(req, res){
-//     res.cookie('token', 'newCookie', { maxAge: 360000, httpOnly: true }).send('cookie set');
-//  });
+// Set static folder
+app.use(express.static('client/build'));
+app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 
 app.use(errorHandler);
 
